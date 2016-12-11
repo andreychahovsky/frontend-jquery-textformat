@@ -4,20 +4,16 @@ console.log($)
 
 // function that formating the text
 function formater(text) {
-	var text, lower;
-	var arr = [];
-	var i = 0;
-	var result;
-
-	lower = text.toLowerCase();
-	arr[i] = lower;
-	console.log(arr[i]);
-	i++;
-
-	result = arr;
-	return result;
+	var enter = /\r\n|\r|\n/g;
+	var spaces = /\s+/g;
+	var text;
+	
+	text = text.toLowerCase();
+  text = text.replace(enter," ");
+	text = text.trim();
+	text = text.replace(spaces," ");
+	return text;
 }
-
 
 // function for transfer text from one area to the other area using the function on the text
 function transferText() {
