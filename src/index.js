@@ -29,6 +29,6 @@ $("textarea.message-field").blur(function () {
 });
 
 // function events on keydown
-$("textarea.message-field").keydown(function () {
+$("textarea.message-field").on("input", function () {
 	transferText();
 });
