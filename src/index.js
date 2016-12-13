@@ -4,14 +4,13 @@ console.log($)
 
 // function that formating the text
 function formater(text) {
-	var enter = /\r\n|\r|\n/g;
-	var spaces = /\s+/g;
-	var text;
+	var enter = /\r\n|\r|\n/g, spaces = /\s+/g;
 	
 	text = text.toLowerCase();
-  text = text.replace(enter," ");
+	text = text.replace(enter, " ");
 	text = text.trim();
-	text = text.replace(spaces," ");
+	text = text.replace(spaces, " ");
+	
 	return text;
 }
 
@@ -23,12 +22,7 @@ function transferText() {
 	$("output.message-formatted").html(formattedText);
 }
 
-// function events on lost the focus
-$("textarea.message-field").blur(function () {
-	transferText();
-});
-
-// function events on keydown
+// function events on input
 $("textarea.message-field").on("input", function () {
 	transferText();
 });
